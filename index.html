@@ -898,6 +898,31 @@ body.header-hidden .header{
 }
 </style>
 
+
+<style id="top-only-header-fix">
+/* Header is visible only at the very top of the page. */
+.header{
+  transform:translateY(0)!important;
+  transition:transform .28s ease,opacity .2s ease!important;
+  will-change:transform;
+  z-index:250!important;
+}
+body.header-hidden .header{
+  transform:translateY(-115%)!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}
+/* On mobile the header can be taller because it wraps; hide the complete block. */
+@media(max-width:760px){
+  .header{
+    transition:transform .28s ease,opacity .2s ease!important;
+  }
+  body.header-hidden .header{
+    transform:translateY(calc(-100% - 8px))!important;
+  }
+}
+</style>
+
 </head>
 
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -2290,39 +2315,15 @@ document.addEventListener('DOMContentLoaded', function(){
   const header=document.querySelector('.header');
   if(!header) return;
 
-  let lastY=window.scrollY||0;
-  let ticking=false;
-  const threshold=8;
-  const revealAt=40;
-
-  function update(){
-    const y=window.scrollY||0;
-    const delta=y-lastY;
-
-    if(y<=revealAt){
-      document.body.classList.remove('header-hidden');
-    } else if(Math.abs(delta)>=threshold){
-      if(delta>0){
-        // Scrolling downward: hide header.
-        document.body.classList.add('header-hidden');
-      }else{
-        // Scrolling upward: show header.
-        document.body.classList.remove('header-hidden');
-      }
-      lastY=y;
-    }
-    ticking=false;
+  function syncHeader(){
+    const y=window.scrollY||document.documentElement.scrollTop||0;
+    // Show only when truly at the top; hide for any meaningful scroll.
+    document.body.classList.toggle('header-hidden', y > 8);
   }
 
-  window.addEventListener('scroll',function(){
-    if(!ticking){
-      window.requestAnimationFrame(update);
-      ticking=true;
-    }
-  },{passive:true});
-
-  // Keep the header visible at the top on initial load.
-  document.body.classList.remove('header-hidden');
+  window.addEventListener('scroll',syncHeader,{passive:true});
+  window.addEventListener('resize',syncHeader,{passive:true});
+  syncHeader();
 })();
 </script>
 
