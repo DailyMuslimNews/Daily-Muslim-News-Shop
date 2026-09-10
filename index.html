@@ -923,6 +923,80 @@ body.header-hidden .header{
 }
 </style>
 
+
+<style id="corner-three-dot-menu">
+.corner-menu-wrap{position:fixed;left:14px;top:14px;z-index:400}
+.corner-menu-btn{width:42px;height:42px;border:1px solid rgba(91,50,29,.22);border-radius:50%;background:#fff8eb;color:#5b321d;display:grid;place-items:center;font-size:23px;line-height:1;cursor:pointer;box-shadow:0 8px 20px rgba(67,39,20,.16);transition:transform .18s ease,background .18s ease}
+.corner-menu-btn:hover{transform:translateY(-2px);background:#fff1d8}
+.corner-menu-panel{position:absolute;left:0;top:50px;width:205px;background:#fffdf8;border:1px solid #e4cdab;border-radius:16px;box-shadow:0 18px 38px rgba(67,39,20,.22);padding:7px;display:none}
+.corner-menu-panel.show{display:block;animation:cornerMenuIn .16s ease}
+.corner-menu-panel button,.corner-menu-panel a{width:100%;box-sizing:border-box;display:block;border:0;background:transparent;color:#5b321d;text-decoration:none;border-radius:10px;padding:11px 12px;text-align:left;font:inherit;font-size:13px;font-weight:800;cursor:pointer}
+.corner-menu-panel button:hover,.corner-menu-panel a:hover{background:#fff1d8}
+@keyframes cornerMenuIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.corner-menu-wrap{left:10px;top:10px}.corner-menu-btn{width:40px;height:40px;font-size:22px}.corner-menu-panel{top:48px;width:190px}}
+body.header-hidden .corner-menu-wrap{display:block}
+</style>
+
+
+<style id="hamburger-menu-fix">
+.hamburger-icon{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:20px;height:20px}
+.hamburger-icon i{display:block;width:19px;height:2px;background:#5b321d;border-radius:99px}
+.corner-menu-btn{padding:0!important}
+</style>
+
+
+<style id="wide-layout-fix">
+/* Use the available desktop width instead of leaving a large empty right side. */
+.header-inner,
+.wrap{
+  width:min(1240px,calc(100% - 32px))!important;
+  max-width:none!important;
+}
+.header-inner{
+  justify-content:space-between;
+}
+.header-search{
+  flex:0 1 460px!important;
+  width:min(460px,42vw)!important;
+  max-width:460px!important;
+  margin-left:auto;
+}
+.header-actions{
+  flex:none!important;
+}
+.products{
+  width:100%!important;
+}
+.pro-category-grid{
+  width:100%;
+}
+@media(max-width:900px){
+  .header-search{
+    width:min(460px,48vw)!important;
+  }
+}
+@media(max-width:760px){
+  .header-inner,
+  .wrap{
+    width:calc(100% - 24px)!important;
+  }
+  .header-search{
+    width:100%!important;
+    max-width:none!important;
+    flex:1 0 100%!important;
+    margin-left:0!important;
+  }
+}
+</style>
+
+
+<style id="remove-corner-search">
+#headerSearchCorner,
+#headerSearchMini{
+  display:none!important;
+}
+</style>
+
 </head>
 
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -943,6 +1017,18 @@ body.header-hidden .header{
 </svg>
 
 <body>
+
+<div class="corner-menu-wrap" id="cornerMenuWrap">
+  <button class="corner-menu-btn" id="cornerMenuBtn" type="button" aria-label="Menu" aria-expanded="false"><span class="hamburger-icon"><i></i><i></i><i></i></span></button>
+  <div class="corner-menu-panel" id="cornerMenuPanel">
+    <a href="#homePage" onclick="closeCornerMenu()">🏠 হোম</a>
+    <a href="#categoryBar" onclick="closeCornerMenu()">🛍️ ক্যাটাগরি</a>
+    <button type="button" onclick="toggleWishlistPanel();closeCornerMenu()">♡ পছন্দের পণ্য</button>
+    <button type="button" onclick="openCart();closeCornerMenu()">🛒 কার্ট</button>
+    <a href="https://wa.me/8801956072795" target="_blank" rel="noopener" onclick="closeCornerMenu()">💬 WhatsApp</a>
+  </div>
+</div>
+
 <header class="header">
 <div class="header-inner">
 <a aria-label="Daily Muslim News Shop home" class="brand" href="#" onclick="goHome();return false;">
@@ -2260,54 +2346,7 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>
 
 
-<script id="scroll-search-collapse-js">
-(function(){
-  const corner=document.getElementById('headerSearchCorner');
-  const mini=document.getElementById('headerSearchMini');
-  const miniInput=document.getElementById('cornerSearchInput');
-  const go=document.getElementById('cornerSearchGo');
-  const mainInput=document.getElementById('headerProductSearch');
-  if(!corner||!mini||!miniInput) return;
 
-  let lastState=false;
-  function setCollapsed(){
-    const collapsed=(window.scrollY||0)>90;
-    if(collapsed!==lastState){
-      document.body.classList.toggle('search-collapsed',collapsed);
-      if(!collapsed) mini.classList.remove('show');
-      lastState=collapsed;
-    }
-  }
-  window.addEventListener('scroll',setCollapsed,{passive:true});
-  setCollapsed();
-
-  corner.addEventListener('click',function(e){
-    e.stopPropagation();
-    mini.classList.toggle('show');
-    if(mini.classList.contains('show')){
-      setTimeout(()=>miniInput.focus(),40);
-    }
-  });
-
-  function doSearch(){
-    const q=miniInput.value.trim();
-    if(mainInput){
-      mainInput.value=q;
-      mainInput.dispatchEvent(new Event('input',{bubbles:true}));
-    }
-    mini.classList.remove('show');
-    const products=document.querySelector('.products');
-    if(products) products.scrollIntoView({behavior:'smooth',block:'start'});
-  }
-  go.addEventListener('click',doSearch);
-  miniInput.addEventListener('keydown',e=>{if(e.key==='Enter') doSearch();});
-  document.addEventListener('click',e=>{
-    if(!e.target.closest('#headerSearchMini') && !e.target.closest('#headerSearchCorner')){
-      mini.classList.remove('show');
-    }
-  });
-})();
-</script>
 
 
 <script id="header-autohide-js">
@@ -2324,6 +2363,30 @@ document.addEventListener('DOMContentLoaded', function(){
   window.addEventListener('scroll',syncHeader,{passive:true});
   window.addEventListener('resize',syncHeader,{passive:true});
   syncHeader();
+})();
+</script>
+
+
+<script id="corner-menu-js">
+(function(){
+  const btn=document.getElementById('cornerMenuBtn');
+  const panel=document.getElementById('cornerMenuPanel');
+  if(!btn||!panel) return;
+  window.closeCornerMenu=function(){
+    panel.classList.remove('show');
+    btn.setAttribute('aria-expanded','false');
+  };
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    const open=panel.classList.toggle('show');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('#cornerMenuWrap')) closeCornerMenu();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') closeCornerMenu();
+  });
 })();
 </script>
 
