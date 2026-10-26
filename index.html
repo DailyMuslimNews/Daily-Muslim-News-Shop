@@ -1120,6 +1120,23 @@ body.header-hidden .corner-menu-wrap{display:block}
 }
 </style>
 
+
+<style id="dmn-premium-feature-styles">
+.price-filter-row{display:grid;grid-template-columns:minmax(170px,1.5fr) repeat(2,minmax(120px,1fr)) auto;align-items:end;gap:10px;margin:12px 0 14px;padding:14px;border:1px solid #ead3b1;border-radius:16px;background:linear-gradient(135deg,#fffaf1,#fff1d7);box-shadow:0 5px 18px #5b321d0a}
+.price-filter-intro{display:flex;flex-direction:column;gap:4px;padding-bottom:3px;color:#5b321d}.price-filter-intro strong{font-size:14px}.price-filter-intro small{font-size:11px;color:#8d725d}
+.price-filter-field{display:flex;flex-direction:column;gap:5px;margin:0;font-size:12px;font-weight:800;color:#765038}.price-filter-field input{width:100%;min-width:0;padding:10px 11px;border:1px solid #dfbd8b;border-radius:10px;background:#fffdfa;color:#432714;outline:none}.price-filter-field input:focus{border-color:#9b6339;box-shadow:0 0 0 3px #f1c98755}
+.clear-price-filter{border:1px solid #dec39b;background:#fff;color:#684024;border-radius:10px;padding:10px 12px;font-weight:800;cursor:pointer;white-space:nowrap}.clear-price-filter:hover{background:#f8e8c9}
+.smart-strip{grid-template-columns:repeat(4,minmax(0,1fr))}
+.product{border:1px solid #e8d1af;box-shadow:0 8px 24px #5b321d15;isolation:isolate}.product img{transition:transform .35s ease,filter .35s ease}.product:hover img{transform:scale(1.025);filter:saturate(1.04)}
+.detail-gallery{min-width:0}.detail-image-trigger{position:relative;display:block;width:100%;padding:0;border:0;border-radius:15px;overflow:hidden;background:#f3dfbf;cursor:zoom-in;text-align:left}.detail-image-trigger #detailImg{display:block;width:100%;height:430px;object-fit:cover;border-radius:15px;transition:transform .3s ease}.detail-image-trigger:hover #detailImg{transform:scale(1.025)}.image-zoom-hint{position:absolute;right:12px;bottom:12px;padding:8px 12px;border-radius:30px;background:#432714e8;color:#fff8ed;font-size:12px;font-weight:800;box-shadow:0 4px 14px #0002}.gallery-caption{margin-top:8px;color:#8d725d;font-size:12px;text-align:center}
+.image-zoom-modal{display:none;position:fixed;z-index:10050;inset:0;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:24px;background:#1d120df2;backdrop-filter:blur(8px)}.image-zoom-modal.show{display:flex}.image-zoom-modal img{max-width:min(94vw,1200px);max-height:84vh;object-fit:contain;border-radius:14px;box-shadow:0 14px 50px #0007}.image-zoom-close{position:absolute;top:18px;right:18px;width:44px;height:44px;border:1px solid #fff6;background:#fff2;color:#fff;border-radius:50%;font-size:20px;cursor:pointer}.image-zoom-label{color:#fff4e3;font-weight:800;text-align:center}.image-zoom-open{overflow:hidden}
+.review-panel{margin-top:18px;padding:18px;border:1px solid #ead3b1;border-radius:18px;background:linear-gradient(135deg,#fffaf2,#fff3df);box-shadow:0 7px 22px #5b321d0c}.review-panel-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}.review-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:#f1c987;color:#5b321d;font-size:21px}.review-panel h3{margin:0;color:#5b321d}.review-panel p{margin:4px 0 0;color:#8d725d;font-size:13px}.review-panel label{margin-top:10px}.review-panel select,.review-panel textarea{background:#fffdfa}.review-submit{width:100%;margin-top:12px;padding:12px;border:0;border-radius:11px;background:#5b321d;color:#fff;font-weight:900;cursor:pointer}.review-submit:hover{background:#744528}.review-note{display:block;margin-top:10px;color:#8d725d;line-height:1.6}
+.checkout-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:16px 0;padding:12px;border:1px solid #ead3b1;border-radius:15px;background:#fffaf0}.checkout-step{display:grid;grid-template-columns:30px 1fr;column-gap:8px;align-items:center;min-width:0;color:#90765f}.checkout-step>span{grid-row:span 2;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#e7d7c2;font-weight:900}.checkout-step b{font-size:13px}.checkout-step small{font-size:11px;line-height:1.3}.checkout-step.done>span{background:#d9eadc;color:#17683a}.checkout-step.current>span{background:#5b321d;color:#fff}.checkout-step.current b{color:#5b321d}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:20px auto 0}.footer-links a,.footer-links button{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:9px 12px;border:1px solid #f1c98755;border-radius:25px;background:#6b412c;color:#fff2df;text-decoration:none;font-size:12px;font-weight:800;cursor:pointer}.footer-links a:hover,.footer-links button:hover{background:#f1c987;color:#432714}.footer-copy{margin-top:20px;padding-top:14px;border-top:1px solid #ffffff30;color:#f3ddc2;font-size:11px;letter-spacing:.02em}.track-disclaimer{margin-top:12px;padding:11px 12px;border-radius:10px;background:#fff3d9;color:#715338;font-size:12px;line-height:1.6}
+@media(max-width:760px){.price-filter-row{grid-template-columns:repeat(2,minmax(0,1fr));padding:11px;gap:9px}.price-filter-intro{grid-column:1/-1}.clear-price-filter{width:100%}.smart-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.detail-image-trigger #detailImg{height:min(72vw,430px)}.review-panel{padding:14px}.checkout-steps{padding:9px 7px;gap:4px}.checkout-step{grid-template-columns:24px 1fr;column-gap:5px}.checkout-step>span{width:24px;height:24px;font-size:12px}.checkout-step b{font-size:11px}.checkout-step small{font-size:9px}.footer-links a,.footer-links button{font-size:11px;padding:8px 10px}}
+@media(prefers-reduced-motion:reduce){.product img,.detail-image-trigger #detailImg{transition:none!important}}
+</style>
+
 </head>
 
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -1240,6 +1257,12 @@ body.header-hidden .corner-menu-wrap{display:block}
 <button class="cat" data-cat="ইলেকট্রনিক" onclick="setCategory('ইলেকট্রনিক',this)">🔊 ইসলামিক গ্যাজেট</button>
 <button class="cat" data-cat="গিফট" onclick="setCategory('গিফট',this)">🎁 গিফট</button>
 </div>
+<div class="price-filter-row" aria-label="দাম অনুযায়ী পণ্য ফিল্টার">
+  <div class="price-filter-intro"><strong>💰 দামের মধ্যে খুঁজুন</strong><small>আপনার বাজেট অনুযায়ী পণ্য সাজান</small></div>
+  <label class="price-filter-field"><span>সর্বনিম্ন ৳</span><input id="minPrice" type="number" min="0" inputmode="numeric" placeholder="যেমন ১০০" oninput="runShopFilters()" aria-label="সর্বনিম্ন দাম"/></label>
+  <label class="price-filter-field"><span>সর্বোচ্চ ৳</span><input id="maxPrice" type="number" min="0" inputmode="numeric" placeholder="যেমন ১০০০" oninput="runShopFilters()" aria-label="সর্বোচ্চ দাম"/></label>
+  <button class="clear-price-filter" type="button" onclick="clearAdvancedFilters()">↺ সব রিসেট</button>
+</div>
 <div class="filter-line">
 <div><b id="resultCount">0</b>টি পণ্য • <span id="filterNote">সব পণ্য</span></div>
 <select id="sortSelect" onchange="runShopFilters()">
@@ -1253,6 +1276,7 @@ body.header-hidden .corner-menu-wrap{display:block}
 <button onclick="openBudgetFinder()">💡 <b>Budget Finder</b><small>আপনার বাজেট বলুন → পণ্য সাজাবো</small></button>
 <button onclick="buildSmartBundle()">🎁 <b>Smart Gift</b><small>বাজেটের মধ্যে একটি সুন্দর কম্বো</small></button>
 <button onclick="showDeliveryInfo()">🚚 <b>Delivery Guide</b><small>অর্ডারের আগে আনুমানিক চার্জ দেখুন</small></button>
+<button onclick="openOrderTracker()">📦 <b>Order Update</b><small>WhatsApp-এ অর্ডারের অবস্থা জানুন</small></button>
 </div>
 </div>
 <div class="products">
@@ -1966,14 +1990,14 @@ body.header-hidden .corner-menu-wrap{display:block}
 <div class="info-card"><div class="section-kicker">🛡️ TRUST CENTER</div><h2>অর্ডারের আগে যেগুলো পরিষ্কার</h2><div class="trust-points"><span>✓ Login প্রয়োজন নেই</span><span>✓ Cash on Delivery</span><span>✓ WhatsApp-এ অর্ডার কনফার্ম</span><span>✓ পণ্যের availability আগে confirm</span><span>✓ Price পরিবর্তন হলে আগে জানানো হবে</span><span>✓ Personal data অপ্রয়োজনে শেয়ার নয়</span></div></div>
 <div class="info-card"><div class="section-kicker">🚚 DELIVERY GUIDE</div><h2>সহজ হিসাব</h2><p>ঢাকার ভিতরে প্রাথমিকভাবে <b>৳৬০</b> এবং ঢাকার বাইরে <b>৳১২০</b> ডেলিভারি ধরা হয়েছে। ওজন, এলাকা ও কুরিয়ার অনুযায়ী চূড়ান্ত চার্জ পরিবর্তিত হতে পারে।</p><button class="wide-ghost" onclick="showDeliveryInfo()">ডেলিভারি হিসাব দেখুন →</button></div>
 </section>
-<section class="faq-zone"><div class="section-kicker">❓ HELP</div><h2>সাধারণ প্রশ্ন</h2>
+<section class="faq-zone" id="faqZone"><div class="section-kicker">❓ HELP</div><h2>সাধারণ প্রশ্ন</h2>
 <details><summary>অর্ডার করতে login লাগবে?</summary><p>না। নাম, মোবাইল নম্বর ও ঠিকানা দিয়ে WhatsApp-এ order confirmation করা যাবে।</p></details>
 <details><summary>পণ্যের ছবি আর বাস্তব পণ্যে পার্থক্য হতে পারে?</summary><p>হ্যাঁ। বিশেষ করে colour/pattern stock অনুযায়ী সামান্য বদলাতে পারে। অর্ডারের আগে WhatsApp-এ availability বা variant confirm করে নেওয়া ভালো।</p></details>
 <details><summary>দাম কি সবসময় একই থাকবে?</summary><p>না। বাজারদর ও supplier cost বদলালে price update হতে পারে। অর্ডার confirm করার সময় final price জানানো হবে।</p></details>
 <details><summary>কীভাবে যোগাযোগ করব?</summary><p>WhatsApp: <b>01956072795</b> • Email: <b>dailymuslimnewsofficial@gmail.com</b></p></details>
 </section>
 
-<section class="pro-contact">
+<section class="pro-contact" id="proContact">
   <div><h2>অর্ডার নিয়ে প্রশ্ন আছে? 💬</h2><p>WhatsApp-এ পণ্যের নাম পাঠান—স্টক, ভ্যারিয়েন্ট ও অর্ডার নিয়ে জেনে নিন।</p></div>
   <a href="https://wa.me/8801956072795" target="_blank" rel="noopener">WhatsApp-এ কথা বলুন →</a>
 </section>
@@ -1989,15 +2013,29 @@ body.header-hidden .corner-menu-wrap{display:block}
     <small>অর্ডার, পণ্য বা যেকোনো সহযোগিতার জন্য ইমেইল করুন</small>
   </div>
 </div>
+  <nav class="footer-links" aria-label="দ্রুত লিংক">
+    <a href="#shopTools" onclick="goHome()">🛍️ পণ্য দেখুন</a>
+    <a href="#faqZone" onclick="goHome()">❓ সাধারণ প্রশ্ন</a>
+    <a href="#proContact" onclick="goHome()">💬 যোগাযোগ</a>
+    <button type="button" onclick="showDeliveryInfo()">🚚 ডেলিভারি তথ্য</button>
+    <button type="button" onclick="openOrderTracker()">📦 অর্ডার আপডেট</button>
+  </nav>
+  <div class="footer-copy">© 2026 Daily Muslim News Shop • হালাল পণ্যের বিশ্বস্ত ঠিকানা</div>
 </div>
 </section>
 <section class="page" id="productPage">
 <button class="back" onclick="goHome()">⬅ ফিরে যান</button>
 <div class="detail">
-<div><img alt="" id="detailImg" src=""/></div>
+<div class="detail-gallery">
+  <button type="button" class="detail-image-trigger" onclick="openImageZoom()" aria-label="পণ্যের ছবি বড় করে দেখুন">
+    <img alt="পণ্যের ছবি" id="detailImg" src=""/>
+    <span class="image-zoom-hint">⤢ ছবি বড় করে দেখুন</span>
+  </button>
+  <div class="gallery-caption">🖼️ পণ্যের ছবিতে চাপ দিলে বড় করে দেখা যাবে</div>
+</div>
 <div class="detail-info">
 <h1 id="detailName"></h1>
-<div class="rating">★★★★★</div>
+<div class="rating">⭐ আপনার রেটিং ও মতামত জানান</div>
 <div class="detail-price">৳ <span id="detailPrice"></span></div>
 <p id="detailDesc" style="line-height:1.7"></p>
 <div class="qty"><b>পরিমাণ:</b><button onclick="changeQty(-1)">−</button><span id="qty">1</span><button onclick="changeQty(1)">+</button></div>
@@ -2005,10 +2043,24 @@ body.header-hidden .corner-menu-wrap{display:block}
 <button class="action add" onclick="addToCart()">🛒 কার্টে যোগ করুন</button>
 </div>
 </div>
+<div class="review-panel">
+  <div class="review-panel-head"><span class="review-icon">✍️</span><div><h3>আপনার মতামত জানান</h3><p>পণ্যটি সম্পর্কে রেটিং ও মতামত WhatsApp-এ পাঠান</p></div></div>
+  <label for="reviewRating">আপনার রেটিং</label>
+  <select id="reviewRating"><option value="5">★★★★★ — ৫/৫</option><option value="4">★★★★☆ — ৪/৫</option><option value="3">★★★☆☆ — ৩/৫</option><option value="2">★★☆☆☆ — ২/৫</option><option value="1">★☆☆☆☆ — ১/৫</option></select>
+  <label for="reviewText">আপনার অভিজ্ঞতা (ঐচ্ছিক)</label>
+  <textarea id="reviewText" rows="3" placeholder="পণ্যের মান, প্যাকেজিং বা অভিজ্ঞতা লিখুন..."></textarea>
+  <button type="button" class="review-submit" onclick="sendProductReview()">💬 WhatsApp-এ রিভিউ পাঠান</button>
+  <small class="review-note">রিভিউ সরাসরি সাপোর্টে পাঠানো হবে; ওয়েবসাইটে পাবলিক রিভিউ দেখাতে আলাদা ডেটাবেস দরকার।</small>
+</div>
 </section>
 <section class="checkout" id="checkout">
 <button class="back" onclick="backFromCheckout()">⬅ ফিরে যান</button>
 <h2>📦 অর্ডার তথ্য</h2>
+<div class="checkout-steps" aria-label="অর্ডার প্রক্রিয়া">
+  <div class="checkout-step done"><span>✓</span><b>পণ্য</b><small>নির্বাচন সম্পন্ন</small></div>
+  <div class="checkout-step current"><span>২</span><b>ঠিকানা</b><small>তথ্য দিন</small></div>
+  <div class="checkout-step"><span>৩</span><b>কনফার্ম</b><small>WhatsApp</small></div>
+</div>
 <div class="delivery-note" id="checkoutSummary"></div>
 <label>আপনার নাম *</label>
 <input id="custName" placeholder="পূর্ণ নাম" required=""/>
@@ -2130,8 +2182,11 @@ function placeOrder(){
  if(!name||!phone||!address){alert('অনুগ্রহ করে নাম, মোবাইল নম্বর ও সম্পূর্ণ ঠিকানা দিন।');return;}
  let sub=cart.reduce((s,x)=>s+x.price*x.qty,0);
  let total=sub+delivery;
+ let orderId='DMN-'+new Date().toISOString().slice(0,10).replace(/-/g,'')+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
+ try{localStorage.setItem('dmn_last_order_v1',JSON.stringify({orderId,phone,placedAt:new Date().toISOString()}));}catch(e){}
  let items=cart.map(x=>'• '+x.name+' | '+x.qty+' টি | ৳'+(x.price*x.qty)).join('\n');
- let msg='🛍️ *নতুন অর্ডার — Daily Muslim News Shop*\n\n'+
+ let msg='🛍️ *নতুন অর্ডার — Daily Muslim News Shop*\n'+
+ '🆔 অর্ডার রেফারেন্স: '+orderId+'\n\n'+
  '👤 নাম: '+name+'\n'+
  '📱 মোবাইল: '+phone+'\n'+
  '📍 ঠিকানা: '+address+'\n\n'+
@@ -2275,12 +2330,19 @@ document.addEventListener('DOMContentLoaded', function(){
   window.runShopFilters=function(){
     const q=(document.getElementById('productSearch')?.value||'').trim().toLowerCase();
     const sort=document.getElementById('sortSelect')?.value||'featured';
+    const minRaw=(document.getElementById('minPrice')?.value||'').trim();
+    const maxRaw=(document.getElementById('maxPrice')?.value||'').trim();
+    const minPrice=minRaw===''?0:Number(minRaw);
+    const maxPrice=maxRaw===''?Infinity:Number(maxRaw);
+    const priceFilterActive=minRaw!==''||maxRaw!=='';
     const grid=document.querySelector('#homePage .products'); if(!grid)return;
     let list=cards();
     list.forEach(c=>c.style.display='');
     let filtered=list.filter(c=>{
       const cat=(c.dataset.category||'').toLowerCase(); const title=cardTitle(c).toLowerCase(); const text=c.innerText.toLowerCase();
-      return (activeCat==='all'||cat===activeCat.toLowerCase()) && (!q||title.includes(q)||text.includes(q));
+      const price=cardPrice(c);
+      const priceOk=!priceFilterActive||(price>0&&price>=minPrice&&price<=maxPrice);
+      return (activeCat==='all'||cat===activeCat.toLowerCase()) && (!q||title.includes(q)||text.includes(q)) && priceOk;
     });
     filtered.sort((a,b)=>{
       if(sort==='low') return cardPrice(a)-cardPrice(b);
@@ -2294,6 +2356,12 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('resultCount').innerText=filtered.length;
     document.getElementById('filterNote').innerText=activeCat==='all'?'সব পণ্য':activeCat;
   }
+  window.clearAdvancedFilters=function(){
+    ['minPrice','maxPrice','productSearch','headerProductSearch'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+    activeCat='all';
+    document.querySelectorAll('.cat').forEach(el=>el.classList.toggle('active',el.dataset.cat==='all'));
+    if(typeof window.runShopFilters==='function')window.runShopFilters();
+  };
   window.toggleWishlistPanel=function(){
     const panel=document.getElementById('wishlistPanel');
     const backdrop=document.getElementById('wishlistBackdrop');
@@ -2675,5 +2743,57 @@ body.order-page-mode .mobile-dock{display:none!important}
 })();
 </script>
 
+
+<!-- Daily Muslim News Shop: premium feature helpers -->
+<div class="image-zoom-modal" id="dmnImageZoom" onclick="closeImageZoom()" aria-hidden="true">
+  <button type="button" class="image-zoom-close" aria-label="ছবি বন্ধ করুন" onclick="event.stopPropagation();closeImageZoom()">✕</button>
+  <img id="dmnZoomedImage" src="" alt="বড় পণ্যের ছবি" onclick="event.stopPropagation()"/>
+  <div class="image-zoom-label" id="dmnZoomedLabel"></div>
+</div>
+<script id="dmn-premium-feature-js">
+window.openImageZoom=function(){
+  const source=document.getElementById('detailImg');
+  const modal=document.getElementById('dmnImageZoom');
+  const img=document.getElementById('dmnZoomedImage');
+  if(!source||!source.src||!modal||!img)return;
+  img.src=source.src;
+  img.alt=(document.getElementById('detailName')?.innerText||'পণ্যের ছবি');
+  const label=document.getElementById('dmnZoomedLabel');
+  if(label)label.textContent=(document.getElementById('detailName')?.innerText||'পণ্যের ছবি')+' — বড় ছবি';
+  modal.classList.add('show');modal.setAttribute('aria-hidden','false');document.body.classList.add('image-zoom-open');
+};
+window.closeImageZoom=function(){
+  const modal=document.getElementById('dmnImageZoom');
+  if(modal){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');}
+  document.body.classList.remove('image-zoom-open');
+};
+window.sendProductReview=function(){
+  const name=document.getElementById('detailName')?.innerText.trim();
+  const rating=document.getElementById('reviewRating')?.value||'5';
+  const review=(document.getElementById('reviewText')?.value||'').trim()||'কোনো লিখিত মন্তব্য নেই';
+  if(!name){alert('প্রথমে একটি পণ্য খুলুন।');return;}
+  const stars='★'.repeat(Number(rating))+'☆'.repeat(5-Number(rating));
+  const msg='📝 *পণ্যের রিভিউ — Daily Muslim News Shop*\nপণ্য: '+name+'\nরেটিং: '+stars+' ('+rating+'/5)\nমতামত: '+review;
+  window.open('https://wa.me/8801956072795?text='+encodeURIComponent(msg),'_blank');
+};
+window.openOrderTracker=function(){
+  const modal=document.getElementById('smartModal');
+  const box=document.getElementById('modalContent');
+  if(!modal||!box)return;
+  let last=null;try{last=JSON.parse(localStorage.getItem('dmn_last_order_v1')||'null')}catch(e){}
+  const id=String(last?.orderId||'').replace(/[^A-Z0-9-]/g,'');
+  const phone=String(last?.phone||'').replace(/[^0-9+]/g,'');
+  modal.classList.add('show');
+  box.innerHTML=`<div class="section-kicker">📦 ORDER UPDATE</div><h2>আপনার অর্ডারের আপডেট</h2><p>অর্ডার আইডি ও অর্ডারের মোবাইল নম্বর দিন। WhatsApp-এ আপনার অর্ডারের অবস্থা জানতে মেসেজ তৈরি হবে।</p><label for="trackOrderId">অর্ডার রেফারেন্স নম্বর</label><input id="trackOrderId" value="${id}" placeholder="যেমন DMN-20261026-AB12"/><label for="trackOrderPhone">অর্ডারের মোবাইল নম্বর</label><input id="trackOrderPhone" type="tel" value="${phone}" placeholder="01XXXXXXXXX"/><button class="action buy" type="button" onclick="requestOrderStatus()">💬 WhatsApp-এ আপডেট জানুন</button><div class="track-disclaimer">ℹ️ এটি সরাসরি কুরিয়ার লাইভ ট্র্যাকিং নয়। আপনার বার্তা সাপোর্টে যাবে; অর্ডার নিশ্চিতকরণ ও ডেলিভারি আপডেট সেখান থেকে জানানো হবে।</div>`;
+};
+window.requestOrderStatus=function(){
+  const orderId=(document.getElementById('trackOrderId')?.value||'').trim();
+  const phone=(document.getElementById('trackOrderPhone')?.value||'').trim();
+  if(!orderId||!phone){alert('অর্ডার রেফারেন্স নম্বর ও মোবাইল নম্বর দিন।');return;}
+  const msg='আসসালামু আলাইকুম, Daily Muslim News Shop থেকে আমার অর্ডারের আপডেট জানতে চাই।\nঅর্ডার রেফারেন্স: '+orderId+'\nমোবাইল নম্বর: '+phone;
+  window.open('https://wa.me/8801956072795?text='+encodeURIComponent(msg),'_blank');
+};
+document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeImageZoom();});
+</script>
 </body>
 </html>
